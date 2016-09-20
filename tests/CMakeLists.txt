@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(TESTS_FOR_PROJECT STACK)
+set(TESTS_FOR_PROJECT COMPLEX)
 
 project(Tests)
 
@@ -15,7 +15,7 @@ include_directories(${${TESTS_FOR_PROJECT}_INCLUDE_DIRS}})
 
 include(cmake/FindCPM.cmake)
 CPM_AddModule("cpm-catch"
-  GIT_REPOSITORY "https://github.com/ksorskiy/complex")
+  GIT_REPOSITORY "https://github.com/designerror/cpm-catch")
 include_directories(${CPM_INCLUDE_DIRS})
 
 add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_sources} ${${PROJECT_NAME}_headers})
