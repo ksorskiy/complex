@@ -3,53 +3,42 @@
 
 class Complex {
 	private:
-		double real;
-		double imagine;
+		double real_;
+		double imaginary_;
 	public:
 		Complex() {
-			real = 0;
-			imagine = 0;
+			real_ = 0;
+			imaginary_ = 0;
 		}
 		Complex(double a, double b) {
-			real = a;
-			imagine = b;
+			real_ = a;
+			imaginary_ = b;
 		}
 		Complex operator+(Complex rv) {
-			Complex result(real + rv.real, imagine + rv.imagine);
+			Complex result(real_ + rv.real_, imaginary_ + rv.imaginary_);
 			return result;
 		}
 		Complex operator-(Complex rv) {
-			Complex result(real - rv.real, imagine - rv.imagine);
+			Complex result(real_ - rv.real_, imaginary_ - rv.imaginary_);
 			return result;
 		}
+
+		double real()
+		{
+			return real_;
+		}
+
+		double imaginary()
+		{
+			return imaginary_;
+		}
+
 		void display() {
 			using namespace std;
-			if(imagine < 0) {
-				cout << real << imagine << + "i" << endl;
+			if(imaginary_ < 0) {
+				cout << real_ << imaginary_ << + "i" << endl;
 			} else {
-				cout << real << "+" << imagine << + "i" << endl;
+				cout << real_ << "+" << imaginary_ << + "i" << endl;
 			}
 		}
 };
-
-int main()
-{
-	setlocale(LC_ALL,"RUS");
-	using namespace std;
-
-
-	Complex num(-5,-3);
-	num.display();
-	Complex num_(1,2);
-	num_.display();
-
-	Complex sum = num + num_;
-	sum.display();
-
-	Complex min = num - num_;
-	min.display();
-
-	cin.get();
-	return 0;
-}
-
