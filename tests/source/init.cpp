@@ -7,3 +7,9 @@ SCENARIO( "default constructor", "ctor" ) {
 	REQUIRE( value.real() == 0 );
   REQUIRE( value.imaginary() == 0 );
 }
+
+SCENARIO( "constructor" ) {
+	Complex obj(1, 2);
+	REQUIRE( obj.real() == 1 );
+	REQUIRE( obj.imaginary() == 2 );
+}
