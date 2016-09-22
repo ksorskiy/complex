@@ -14,6 +14,15 @@ class Complex {
 			real_ = a;
 			imaginary_ = b;
 		}
+
+		double real() {
+			return real_;
+		}
+
+		double imaginary() {
+			return imaginary_;
+		}
+
 		Complex operator+(Complex rv) {
 			Complex result(real_ + rv.real_, imaginary_ + rv.imaginary_);
 			return result;
@@ -21,16 +30,6 @@ class Complex {
 		Complex operator-(Complex rv) {
 			Complex result(real_ - rv.real_, imaginary_ - rv.imaginary_);
 			return result;
-		}
-
-		double real()
-		{
-			return real_;
-		}
-
-		double imaginary()
-		{
-			return imaginary_;
 		}
 
 		void display() {
