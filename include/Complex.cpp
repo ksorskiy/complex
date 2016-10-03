@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <locale.h>
 #include <iostream>
 
@@ -23,6 +24,14 @@ class Complex {
 			return imaginary_;
 		}
 
+		void setReal(double value) {
+			real_ = value;
+		}
+
+		void setImaginary(double value) {
+			imaginary_ = value;
+		}
+
 		Complex operator+(Complex rv) {
 			Complex result(real_ + rv.real_, imaginary_ + rv.imaginary_);
 			return result;
@@ -31,7 +40,15 @@ class Complex {
 			Complex result(real_ - rv.real_, imaginary_ - rv.imaginary_);
 			return result;
 		}
-
+		Complex& operator++() {
+			setReal(real() + 1);
+			return *this;
+		}
+		Complex operator++(int) {
+		   Complex temp = *this;
+		   setReal(temp.real()+1);
+		   return temp;
+		}
 		void display() {
 			using namespace std;
 			if(imaginary_ < 0) {
