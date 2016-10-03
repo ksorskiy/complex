@@ -39,7 +39,7 @@ class Complex {
 			Complex result(real_ - rv.real_, imaginary_ - rv.imaginary_);
 			return result;
 		}
-		Complex& operator++() {
+		Complex operator++() {
 			setReal(real() + 1);
 			return *this;
 		}
